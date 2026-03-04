@@ -87,3 +87,130 @@ This repository also includes a collection of programming assignments developed 
 
 - **Homework 10 – Depth-First Search (DFS)**  
   Implementation of DFS traversal, **topological sorting**, and **Tarjan’s algorithm** for strongly connected components.
+
+
+
+
+# Operating Systems Assignments (C)
+
+This repository contains three programming assignments developed in **C** for the **Operating Systems** course.
+
+The projects focus on fundamental operating system concepts such as:
+- file system manipulation
+- process creation
+- thread synchronization
+- interprocess communication
+- shared memory and memory mapping
+
+All programs are implemented using **Linux system calls and POSIX APIs**.
+
+---
+
+## Assignment 1 – File System (a1)
+
+The first assignment focuses on working with the **Linux file system** and a custom binary file format called **SF (Section File)**.
+
+The program implements multiple command-line operations.
+
+### Features
+- Display the assignment variant
+- List directory contents
+- Recursive directory traversal
+- File filtering based on size or name prefix
+- Parsing and validating the custom **SF file format**
+- Extracting specific lines from sections of SF files
+- Searching directories for SF files that satisfy specific conditions
+
+### Compilation
+
+```bash
+gcc -Wall a1.c -o a1
+```
+
+### Run
+
+```bash
+./a1 [OPTIONS]
+```
+
+---
+
+## Assignment 2 – Processes and Threads (a2)
+
+The second assignment focuses on **process creation and thread synchronization**.
+
+The program generates a hierarchy of processes and creates multiple threads inside them.  
+Each process and thread must report its execution using special helper functions.
+
+### Features
+- Process creation using `fork()`
+- Thread creation using `pthread`
+- Synchronization between threads
+- Controlling execution order between threads
+- Limiting the number of simultaneously running threads
+- Synchronization between threads from different processes
+
+The tester communicates with the program through helper functions such as `init()` and `info()`.
+
+### Compilation
+
+```bash
+gcc -Wall a2.c a2_helper.c -o a2 -lpthread
+```
+
+### Run
+
+```bash
+./a2
+```
+
+---
+
+## Assignment 3 – Interprocess Communication (a3)
+
+The third assignment implements communication between processes using **IPC mechanisms in Linux**.
+
+The program interacts with a tester process through **named pipes**, shared memory, and memory-mapped files.
+
+### Features
+- Communication using **named pipes (FIFO)**
+- Handling multiple request commands
+- Creating shared memory regions
+- Writing values to shared memory
+- Mapping files into memory using `mmap`
+- Reading bytes from mapped files
+- Reading data from specific file sections
+- Accessing logical memory space inside files
+
+The program continuously reads requests from a request pipe and sends responses through a response pipe.
+
+### Compilation
+
+```bash
+gcc -Wall a3.c -o a3 -lrt
+```
+
+### Run
+
+```bash
+./a3
+```
+
+---
+
+## Technologies Used
+
+- C
+- POSIX Threads (pthreads)
+- Linux System Calls
+- Named Pipes (FIFO)
+- Shared Memory
+- Memory Mapped Files (mmap)
+
+---
+
+## Author
+
+Denisa-Andreea Ujeniuc  
+Technical University of Cluj-Napoca  
+Computer Science
